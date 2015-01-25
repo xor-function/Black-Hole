@@ -14,6 +14,7 @@ file encryption. It is best in my opinion to create the keypair you need
 and only give out copies of the public key to the indivduals you 
 personaly trust.
 
+And by give I mean hand it to them, DONT email.
 
 ## Installing
 The install process will get lighttpd through apt and configure it then 
