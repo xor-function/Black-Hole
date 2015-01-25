@@ -164,5 +164,5 @@ using tor tor2web proxies:
 ```
 
 
-xor-function @
-info@nightowlconsulting.com
+xor-function at
+nightowlconsulting.com
