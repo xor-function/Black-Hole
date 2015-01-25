@@ -122,7 +122,7 @@ encryption.
 
 # EVENT_HORIZON
 
-A client that for one that wishes to upload to BLACK_HOLE. It performs 
+A client for one that wishes to upload to BLACK_HOLE. It performs 
 the neccesary encryption on the files to be uploaded, then uses curl along 
 with OpenSSL and the public key to generate a url post request that 
 contains the three required parameters.
