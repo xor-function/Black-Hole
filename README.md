@@ -23,11 +23,9 @@ You will also be prompted to input the authentication passphrase.
 
 Run as root
 
-'''
-
+```
 root@null:~/black-hole# ./install-bh.sh
-
-'''
+```
 
 
 ### Explanation
@@ -45,10 +43,12 @@ prompted for the passphrase.
 
 The required folders are placed in /var/. 
 
+```
          /var/cp-data/
                  └── auth/
-                       ├── pphrase
-                       └── private.pem
+                       ├── pphrase
+                       └── private.pem
+```
 
 The owner for cp-data/ and it's subdirectories is "www-data".
 
@@ -74,7 +74,7 @@ public key encryption.
 
 ### OpenSSL smime data, example:
 
-'''
+```
 MIME-Version: 1.0
 Content-Disposition: attachment; filename="smime.p7m"
 Content-Type: application/x-pkcs7-mime; smime-type=enveloped-data; name="smime.p7m"
@@ -90,7 +90,7 @@ cvwapfxFGIs85QIFlQp9c2VP6KCFMk7h4Hyv03pJgWSR2hg7CDjzOfdMsi1WQ92P
 TEYIi9n26XXiCUTMLCY8RqJsWlFvhyhW8PXXQy2kC7fn/I+ukcf+qtieEzGVCIOS
 gWHEt5k6uWpt43pNMDwGCSqGSIb3DQEHATAdBglghkgBZQMEASoEEPxDoqLGhINJ
 ZhF1cyVM0XyAEBLJ3nT17dVtx/E+k3lEw/8=
-'''
+```
 
 For this parameter to be completed successfully the cgi would have to 
 decrypt the SMIME data with the private key and extract the 
@@ -136,12 +136,12 @@ over tor.
 The temporary password for symmetric encryption is generated with 
 /dev/urandom and piped into a variable.
 
-'''
+```
  TPASS=$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c 30 | base64)
-'''
+```
 
 Options avaliable by event-horizon client.
-,,,
+```
 
 options:
    -k   location of the public key in pem format for use in encryption
@@ -158,8 +158,7 @@ without tor:
 using tor tor2web proxies:
 ./event-horizon.sh -k public.pem -a pphrase -t yes -d loot -u hakzortrolz.onion
 
-,,,
-
+```
 
 
 xor-function @
