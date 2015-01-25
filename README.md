@@ -4,7 +4,7 @@ Is a perl cgi file upload web app that is built to function easily with
 curl and the use of html forms is not required or needed. It is made 
 to be used as a TOR hidden service.
 
-Due to this the difference of this cgi upload app from others is that 
+The difference of this cgi upload app from others is that 
 it uses OpenSSL public key encryption for authentication. The 
 purchase of a cert from a CA is not needed or recommened as those 
 orginizations personal regard for you is dubious.
@@ -158,7 +158,7 @@ without tor:
 ./event-horizon.sh -k public.pem -a pphrase -t no -d loot -u some_domain.com
 
 using tor tor2web proxies:
-./event-horizon.sh -k public.pem -a pphrase -t yes -d loot -u hakzortrolz.onion
+./event-horizon.sh -k public.pem -a pphrase -t yes -d loot -u xaede7oiftahtz.onion
 
 ```
 
