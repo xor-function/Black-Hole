@@ -26,6 +26,8 @@ Run as root
 ```
 root@null:~/black-hole# ./install-bh.sh
 ```
+The private key is required to be in the directory /var/cp-data/auth/
+for this cgi to function.
 
 
 ### Explanation
