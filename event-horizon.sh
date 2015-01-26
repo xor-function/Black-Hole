@@ -10,7 +10,7 @@ about:
 curl is used to craft a url request with the neccessary posts
 encrypted with your public OpenSSL key that corrisponds to the private
 one your server. This enables the upload of encrypted data to the
-exfiltrator.pl CGI app.
+black-hole.pl CGI app.
 
 usage examples
 
