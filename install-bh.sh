@@ -22,9 +22,7 @@ chk_tubes() {
   printf "\nChecking your tubes..."
   if ! ping -c 1 google.com > /dev/null 2>&1  ; then
       if ! ping -c 1 yahoo.com > /dev/null 2>&1  ; then
-         if ! ping -c 1 bing.com > /dev/null 2>&1 ; thenBlack-Hole/ or cancel
- Edit file   Preview changes      
-
+         if ! ping -c 1 bing.com > /dev/null 2>&1 ; then
              clear
              printf "\nDo you have an internet connection???\n\n"
              exit
