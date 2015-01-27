@@ -129,6 +129,10 @@ echo "[*] Fetching packages.."
 get_aptpkg lighttpd
 get_aptpkg tor
 
+echo "[*] Setting up Perl..."
+curl -L https://cpanmin.us | perl - --sudo App::cpanminus
+cpanm -i CGI.pm
+
 if [ -d /var/www/ ]; then
    echo "[!] Something when wrong during install, cannot continue."
    exit
