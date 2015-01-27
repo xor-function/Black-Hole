@@ -129,37 +129,8 @@ echo "[*] Fetching packages.."
 get_aptpkg lighttpd
 get_aptpkg tor
 
-echo "[*] Checking installed Perl modules, please wait...."
-module=$(find / *.pm 2> /dev/null | grep -i -o cgi.pm)
-
-if [ -z "$module" ]; then 
-	clear
-	echo ""
-	echo "ATTENTION::::CGI.pm was not found!"
-	echo "Cpanm will be used to fetch and install the required Perl module"
-	echo "If you choose not to you will have to install it manually"
-	echo "Do you wish to continue? (Y/N)"
-	while true; do
-     	     read -e answer
-     	     case $answer in
-	          [Yy] ) pm=TRUE;;
-	          [Yy][eE][sS] ) pm=TRUE;;
-	          [nN] ) pm=FALSE;;
-	          [Nn][oO] ) pm=FALSE;;
-	            *  ) printf "\nNot Valid, Answer y or n\n";;
-	     esac
-	done
-        if [ "$pm" = TRUE ]; then
-        	# The following installs a Perl module that might not be avaliable in your distro, uncomment if you wish.
-		echo "[*] Setting up Perl..."
-		curl -L https://cpanmin.us | perl - --sudo App::cpanminus
-		cpanm -i CGI.pm
-           else
-                echo "[!] Check /var/log/lighttpd/breakage.log for debuging info."
-                echo "[!] You will have to install the module yourself, continuing..."
-        fi
-  
-fi
+echo "[*] Setting up Perl..."
+get_aptpkg libcgi-pm-perl
 
 if [ -d /var/www/ ]; then
    echo "[!] Something when wrong during install, cannot continue."
