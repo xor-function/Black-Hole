@@ -150,7 +150,7 @@ Options avaliable by event-horizon client.
 
 options:
    -k   location of the public key in pem format for use in encryption
-   -t   use tor2web to use exfil hosted on hidden service (yes/no)
+   -t   use tor2web to exfil hosted on hidden service (yes/no)
    -a   trusted passphrase on the server hosting the cgi perl file
    -d   location of the data file you wish to upload
    -u   full url to the perl cgi upload app, if hidden service place .onion url
