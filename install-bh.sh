@@ -191,7 +191,7 @@ index-file.names            = ( "index.html", "black-hole.pl" )
 
 url.access-deny             = ( "~", ".inc" )
 
-cgi.assign                  = ( ".x"   => "/usr/bin/perl" )
+cgi.assign                  = ( ".pl"   => "/usr/bin/perl" )
 
 static-file.exclude-extensions = ( ".php", ".pl", ".fcgi" )
 
