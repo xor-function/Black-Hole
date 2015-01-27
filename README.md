@@ -22,6 +22,7 @@ It wiil also will place the cgi in the correct location, so dont wory
 about that.
 
 You will also be prompted to input the authentication passphrase.
+
 The .onion hostname will be shown upon completion.
 
 Run as root
