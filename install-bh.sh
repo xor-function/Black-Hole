@@ -22,7 +22,9 @@ chk_tubes() {
   printf "\nChecking your tubes..."
   if ! ping -c 1 google.com > /dev/null 2>&1  ; then
       if ! ping -c 1 yahoo.com > /dev/null 2>&1  ; then
-         if ! ping -c 1 bing.com > /dev/null 2>&1 ; then
+         if ! ping -c 1 bing.com > /dev/null 2>&1 ; thenBlack-Hole/ or cancel
+ Edit file   Preview changes      
+
              clear
              printf "\nDo you have an internet connection???\n\n"
              exit
@@ -155,6 +157,7 @@ chown www-data:www-data -R /var/cp-data/
 clear
 get_pphrase
 printf "$pphrase" > /var/cp-data/auth/pphrase
+clear
 
 # removing comments from torrc hidden service configuration paramaters
 if [ -e /etc/tor/torrc.original ]; then
@@ -227,6 +230,6 @@ fi
 
 echo "[+] Finished!"
 echo "[+] Your hidden service hostname is $ONION, be sure to wait a few "
-echo "    minutes for the hidden service info to propigate befor connecting."
+echo "    minutes for the hidden service info to propigate before connecting."
 
 exit
