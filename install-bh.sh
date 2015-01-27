@@ -132,7 +132,7 @@ get_aptpkg tor
 echo "[*] Setting up Perl..."
 get_aptpkg libcgi-pm-perl
 
-if [ -d /var/www/ ]; then
+if [ ! -d /var/www/ ]; then
    echo "[!] Something when wrong during install, cannot continue."
    exit
 fi
@@ -157,15 +157,17 @@ get_pphrase
 printf "$pphrase" > /var/cp-data/auth/pphrase
 
 # removing comments from torrc hidden service configuration paramaters
-chdsrvc='#HiddenServiceDir /var/lib/tor/hidden_service/'
-cvirport='#HiddenServicePort 80 127.0.0.1:80'
+if [ -e /etc/tor/torrc.original ]; then
+   cat /etc/tor/torrc.original > /etc/tor/torrc
+fi
 
-hdsrvc='HiddenServiceDir /var/lib/tor/hidden_service/'
-virport='HiddenServicePort 80 127.0.0.1:80'
-
-sed -i 's/$chdsrvc/$hdsrvc/g' /etc/tor/torrc
-sed -i 's/$cvirport/$virport/g' /etc/tor/torrc
-
+torrc=$(cat /etc/tor/torrc)
+echo "$torrc" > /etc/tor/torrc.original
+echo '# Changes made for black-hole' > /etc/tor/torrc
+echo 'HiddenServiceDir /var/lib/tor/hidden_service/' >> /etc/tor/torrc
+echo 'HiddenServicePort 80 127.0.0.1:80' >> /etc/tor/torrc
+echo "" >> /etc/tor/torrc
+echo "$torrc" >> /etc/tor/torrc
 
 # overwriting default config setting to be specific for black_hole
 cat > /etc/lighttpd/lighttpd.conf<<EOF
@@ -210,9 +212,18 @@ EOF
 service lighttpd restart
 service tor restart
 
-
 # getting .onion hidden service address to display at end
-ONION=$(cat /var/lib/tor/hidden_service/hostname)
+until [ -e /var/lib/tor/hidden_service/hostname ]; do
+   sleep 2
+   ONION=''
+   ONION=$(cat /var/lib/tor/hidden_service/hostname)
+done
+
+if [ -z ONION ]; then
+   sleep 2
+   ONION=''
+   ONION=$(cat /var/lib/tor/hidden_service/hostname)
+fi
 
 echo "[+] Finished!"
 echo "[+] Your hidden service hostname is $ONION, be sure to wait a few "
