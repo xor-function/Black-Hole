@@ -220,7 +220,7 @@ until [ -e /var/lib/tor/hidden_service/hostname ]; do
    ONION=$(cat /var/lib/tor/hidden_service/hostname)
 done
 
-if [ -z ONION ]; then
+if [ -z "$ONION" ]; then
    sleep 2
    ONION=''
    ONION=$(cat /var/lib/tor/hidden_service/hostname)
