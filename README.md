@@ -17,10 +17,12 @@ personaly trust.
 And by give I mean hand it to them, DONT email.
 
 ## Installing
-The install process will get lighttpd through apt and configure it then 
-place the cgi in the correct location.
+The install process will get lighttpd and tor through apt and configure them.
+It wiil also will place the cgi in the correct location, so dont wory 
+about that.
 
 You will also be prompted to input the authentication passphrase.
+The .onion hostname will be shown upon completion.
 
 Run as root
 
