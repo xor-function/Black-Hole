@@ -1,4 +1,4 @@
-# BLACK_HOLE
+# BLACK HOLE
 
 Is a perl cgi file upload web app that is built to function easily with 
 curl and the use of html forms is not required or needed. It is made 
@@ -70,7 +70,7 @@ NOTE: for those that do not wish to craft your own url requestes
 and wish to use a more automated method, see EVENT_HORIZON below.
 
 
-## FIRST parameter
+### FIRST parameter
 The first parameter is the plain-text or hashed passphrase that is 
 encrypted by the corrisponding OpenSSL public key as any SMIME type with
 public key encryption.
@@ -101,7 +101,7 @@ passphrase/hash and match this to the passphrase/hash in the
 cp-data/auth/ folder. 
 
 
-## SECOND parameter
+### SECOND parameter
 The second parameter contains a one time use random key that is 
 encrypted in the same manner as the first parameter(SMIME/AES). This 
 one time use passphrase will be used to encrypt/decrypt symmenticly 
@@ -113,15 +113,14 @@ passphrase is stored in the same directory as the data that is uploaded,
 both share the same time stamp.
 
 
-## THIRD parameter 
+### THIRD parameter 
 The third parameter will contain the encryped data to be uploaded.
-
 This cgi was made to function in a environment without SSL/TLS session
 encryption.
 
 
 
-# EVENT_HORIZON
+# EVENT HORIZON
 
 A client for one that wishes to upload to BLACK_HOLE. It performs 
 the neccesary encryption on the files to be uploaded, then uses curl along 
