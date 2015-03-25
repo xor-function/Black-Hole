@@ -107,7 +107,7 @@ cp-data/auth/ folder.
 ### SECOND parameter
 The second parameter contains a one time use random key that is 
 encrypted in the same manner as the first parameter(SMIME/AES). This 
-one time use passphrase will be used to encrypt/decrypt symmenticly 
+one time use passphrase will be used to encrypt/decrypt symmetrically 
 the data that is to be uploaded.
 
 For this parameter to be completed successfully the cgi would have to
@@ -132,11 +132,14 @@ contains the three required parameters.
 
 The trick is that on top of directly uploading to the cgi over the normal 
 Internet. It also has the option to use proxies that serve as hidden service 
-gateways such as tor2web. The idea behind it is that the LAN this client may 
-be connecting from may have egress filtering rules (IDS/IDPS) that may interfere 
-with tor traffic. So this manages to still use tor by first connecting to one 
+gateways such as tor2web. The idea behind it is that the LAN a client may 
+be connecting from could have egress filtering rules (IDS/IDPS) that interfere 
+with tor traffic. So this manages to use tor by first connecting to one 
 of these proxies using regular HTTPS that then forward it to your hidden service 
-over tor. 
+over tor.
+
+The encryption scheme is to protect the information of the data being sent 
+through these proxies.
 
 The temporary password for symmetric encryption is generated with 
 /dev/urandom and piped into a variable.
