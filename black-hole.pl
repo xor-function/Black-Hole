@@ -5,7 +5,7 @@
 #
 # BLACK_HOLE
 # by xor-function 
-# license BSD 3 
+
 
 
 use CGI;
