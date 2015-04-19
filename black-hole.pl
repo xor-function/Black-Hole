@@ -93,8 +93,8 @@ $pph =~ s/\r|\n//g;
 
 # authenticating
 if ( "$decrypt" ne "$pph" ) {
- print "UNATHORIZED USER";
- die("UNATHORIZED USER");
+ print "UNAUTHORIZED USER";
+ die("UNAUTHORIZED USER");
 }
 
 # cleaning up temp files 
