@@ -197,7 +197,7 @@ cgi.assign                  = ( ".pl"   => "/usr/bin/perl" )
 static-file.exclude-extensions = ( ".php", ".pl", ".fcgi" )
 
 dir-listing.encoding        = "utf-8"
-server.dir-listing          = "enable"
+server.dir-listing          = "disable"
 
 compress.cache-dir          = "/var/cache/lighttpd/compress/"
 compress.filetype           = ( "application/x-javascript", "text/css", "text/html", "text/plain" )
