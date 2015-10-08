@@ -1,4 +1,4 @@
-# BLACK HOLE
+# black hole
 
 Is a perl cgi file upload web app that is built to function easily with 
 curl and the use of html forms is not required or needed. It is made 
@@ -123,7 +123,7 @@ encryption.
 
 
 
-# EVENT HORIZON
+# event horizon
 
 A client for one that wishes to upload to BLACK_HOLE. It performs 
 the neccesary encryption on the files to be uploaded, then uses curl along 
