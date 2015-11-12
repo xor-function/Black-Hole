@@ -6,19 +6,19 @@ to be used as a TOR hidden service.
 
 The difference of this cgi upload app from others is that 
 it uses OpenSSL public key encryption for authentication. The 
-purchase of a cert from a CA is not needed or recommened as those 
-orginizations personal regard for you is dubious.
+purchase of a cert from a CA is not needed or recommended as those 
+organizations personal regard for you is dubious.
 
 Since these certs are not used for establishing SSL sessions only for
-file encryption. It is best in my opinion to create the keypair you need 
-and only give out copies of the public key to the indivduals you 
-personaly trust.
+file encryption. It is best in my opinion to create the key-pair you need 
+and only give out copies of the public key to the individuals you 
+personally trust.
 
 And by give I mean hand it to them, DONT email.
 
 ## Installing
 The install process will get lighttpd and tor through apt and configure them.
-It wiil also will place the cgi in the correct location, so dont wory 
+It wiil also will place the cgi in the correct location, so don't wory 
 about that.
 
 You will also be prompted to input the authentication passphrase.
@@ -37,9 +37,7 @@ for this cgi to function.
 ### Explanation
 
 A breakdown of the cgi will follow but it still does not beat reading
-the Perl cgi itself. Plus eventhough it's Perl I avoided using obscure 
-code and kept it simple so that a sysadmin that doesn't program should 
-be able to break it down after some reading.
+the Perl cgi itself.
 
 To understand how the authentication is performed, I first have to point
 out the folders in use by this cgi.
@@ -66,10 +64,10 @@ to see if it matches with an authentication parameter posted to it.
 keep this in mind.
 
 The cgi has three parameters that need to be filled and each need to be 
-processed successfully otherwise the cgi will exit. They are proccesed 
+processed successfully otherwise the cgi will exit. They are processed 
 in a sequential manner.
 
-NOTE: for those that do not wish to craft your own url requestes 
+NOTE: for those that do not wish to craft your own url requests 
 and wish to use a more automated method, see EVENT_HORIZON below.
 
 
